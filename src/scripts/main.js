@@ -1,3 +1,5 @@
+// console.log("Bobs Burgers");
+
 // You need to write code to represent the process of ordering food at a fast food joint. Your restaurant is Bob's Burgers, and you have some starter code below. The object will have two behaviors that you must define.
 
 // The object should have a property named orders that is an array. You will need to define this.
@@ -8,17 +10,35 @@
 
 const restaurant = {
   name: "Bob's Burgers",
-  placeOrder: function () {
-  }
+  placeOrder: function (meal) {
+    this.orders.push(meal);
+  },
+  orders:[]
 }
 
 const chickenComboMeal = {
-
+sandwichType: "Sub",
+fries: true,
+drinkSize: "Large"
 }
 
+const pizzaComboMeal = {
+  sandwichType: "Pizza",
+  fries: false,
+  drinkSize: "Small"
+  }
+
 // Place an order
-restaurant.placeOrder()
+restaurant.placeOrder(chickenComboMeal);
+restaurant.placeOrder(pizzaComboMeal);
+
 
 // Invoke the function to return the list of all orders
 
+function returnOrders () {
+  return restaurant.orders;
+}
+
 // Output all orders to the console using console.table()
+console.table(restaurant.orders)
+
